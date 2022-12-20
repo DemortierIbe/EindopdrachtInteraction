@@ -25,7 +25,26 @@ h1{
     --Light-color : #F6F6F6;
 }
 
+.c-title{
+    font-size: 5rem;
+    margin-top: 3rem;
+    margin-left: 3rem;
+    margin-bottom: 3rem;
+}
 
+.c-gallery{
+    
+    max-width: 1600px;
+    max-height: 800px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 32px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 @media (min-width: 320px) {
     .c-gallery{
@@ -53,27 +72,6 @@ h1{
         grid-template-columns: repeat(4, 1fr);
     }
      
-}
-
-.c-title{
-    font-size: 5rem;
-    margin-top: 3rem;
-    margin-left: 3rem;
-    margin-bottom: 3rem;
-}
-
-.c-gallery{
-    
-    max-width: 1600px;
-    max-height: 800px;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 32px;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .c-info{
