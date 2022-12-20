@@ -74,8 +74,15 @@ const getData = (endpoint) => {
     for (let dog of dogs) {
       const result = dog.weight.metric.split(' - ');
       console.log(result[1]);
-      const maxgewicht = result[1] - result[0];
+      let maxgewicht = 0;
+      if(result[1] == undefined) {
+        maxgewicht = 1;
+      }
+      else {
+         maxgewicht = result[1] - result[0];
+      }
       const mingewicht = result[0];
+      
       
       doghtml += `
       <div class="c-rectangle c-gallery-image js-image" >

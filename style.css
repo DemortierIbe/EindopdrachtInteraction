@@ -11,30 +11,21 @@
 body{
     width: 100%;
     height: 100vh;
-    background: #E4F2E9;
+    background: #F6F6F6;
     font-family: 'roboto', sans-serif;
 }
 
-.c-title{
-    font-size: 5rem;
-    margin-top: 3rem;
-    margin-left: 3rem;
-    margin-bottom: 3rem;
+h1{
+    color: var(--Dark-color);
 }
 
-.c-gallery{
-    
-    max-width: 1600px;
-    max-height: 800px;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 32px;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
+:root{
+    --Dark-color : #1f272a;
+    --Gray-color : #969696;
+    --Light-color : #F6F6F6;
 }
+
+
 
 @media (min-width: 320px) {
     .c-gallery{
@@ -64,9 +55,32 @@ body{
      
 }
 
+.c-title{
+    font-size: 5rem;
+    margin-top: 3rem;
+    margin-left: 3rem;
+    margin-bottom: 3rem;
+}
+
+.c-gallery{
+    
+    max-width: 1600px;
+    max-height: 800px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 32px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .c-info{
     display: block;
     text-align: center;
+    background-color: white;
+    border-radius: 0.5em;
 }
 
 
@@ -87,8 +101,9 @@ body{
 .c-image{
     width: 100%;
     height: 240px;
+    width: 236px;
     object-fit: cover;
-    border-radius: 0.5em;
+    border-radius: 0.5em 0.5em 0 0;
 }
 
 .c-popup .c-image{
@@ -128,7 +143,7 @@ body{
 }
 
 .c-popup .c-info .c-name_dogs {
-    color: darkgray;
+    color: var(--Gray-color);
 }
 
 .c-popup.active{
@@ -137,13 +152,16 @@ body{
 }
 
 .c-name_dogs {
-    color: black;
+    color: var(--Dark-color);
     margin-left: auto;
     margin-right: auto;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    font-weight: bold;
 }
 
 .c-extrainfo {
-    color: darkgray;
+    color: var(--Gray-color);
     display: none;
 }
 
@@ -154,12 +172,13 @@ body{
 .c-popup .c-info {
     display: block;
     text-align: center;
+    background-color: transparent;
 }
 
 .c-kruisje {
     width: 20px;
     height: 20px;
-    fill: red;
+    fill: var(--Light-color);
     position: fixed;
     top: 16px;
     right: 16px;
@@ -167,25 +186,28 @@ body{
 }
 
 .c-volledigebar{
-    background-color: gray !important;
+    background-color: var(--Light-color) !important;
     height: 24px;
     width: 100%;
     display: none;
     border-radius: 0.5em;
+    border: 2px var(--Dark-color) solid;
 }
 
 .c-green-bar{
-    background-color: green !important;
-    height: 24px;
+    background-color: var(--Dark-color) !important;
+    height: 22px;
     display: none;
+    border-bottom: 2px var(--Dark-color) solid;
 }
 
 .c-eerstedeel-bar{
-    background-color: gray !important;
-    height: 24px;
+    background-color: var(--Light-color) !important;
+    height: 22px;
     display: none;
     z-index: 1;
     border-radius: 0.5em 0 0 0.5em;
+    border-bottom: 2px var(--Dark-color) solid;
 }
 
 .c-popup .c-info .c-volledigebar{
@@ -201,14 +223,15 @@ body{
 }
 
 .c-image:focus{
-  box-shadow: 0 0 3px 3px black;
+  box-shadow: 0 0 3px 3px var(--Dark-color);
 }
 
-.c-image:hover{
-    box-shadow: 0 0 3px 3px black;
+.c-info:hover{
+    box-shadow: 0 0 3px 3px var(--Dark-color);
   }
 
 .c-logo{
     height: 4rem;
     width: 4rem;
+    fill: var(--Dark-color);
 }
