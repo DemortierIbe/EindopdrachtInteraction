@@ -11,16 +11,20 @@
 body{
     width: 100%;
     height: 100vh;
-    display: flex;
     justify-content: center;
     align-items: center;
     background: #E4F2E9;
     font-family: 'roboto', sans-serif;
 }
 
+.c-title{
+    font-size: 5rem;
+    margin-top: 3rem;
+    margin-left: 3rem;
+    margin-bottom: 3rem;
+}
 
-
-.gallery{
+.c-gallery{
     
     max-width: 1600px;
     max-height: 800px;
@@ -35,35 +39,35 @@ body{
 }
 
 @media (min-width: 320px) {
-    .gallery{
+    .c-gallery{
         grid-template-columns: repeat(1, 1fr);
     }
      
 }
 
 @media (min-width: 768px) {
-    .gallery{
+    .c-gallery{
         grid-template-columns: repeat(2, 1fr);
     }
      
 }
 
 @media (min-width: 1024px) {
-    .gallery{
+    .c-gallery{
         grid-template-columns: repeat(3, 1fr);
     }
      
 }
 
 @media (min-width: 1440px) {
-    .gallery{
+    .c-gallery{
         grid-template-columns: repeat(4, 1fr);
     }
      
 }
 
 
-.gallery-image{
+.c-gallery-image{
     margin: 10px;
     overflow: hidden;
 }
@@ -72,22 +76,26 @@ body{
     margin-bottom: -32px;
     height: 300px;
     max-width: 240px;
-}
-
-.c-image{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: 1s;
-    width: 260px;
-    height: 240px;
     margin-left: auto;
     margin-right: auto;
 }
 
+.c-image{
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 0.5em;
+}
+
+.c-popup .c-image{
+    transition: 1s;
+}
+
 /* popup */
 
-.popup{
+.c-popup{
     position: fixed;
     top: 50%;
     left: 50%;
@@ -107,18 +115,18 @@ body{
     opacity: 1;
 }
 
-.popup .c-info .c-image {
+.c-popup .c-info .c-image {
     height: 100%;
     width: 100%;
     max-height: 400px;
     max-width: 800px;
 }
 
-.popup .c-info .c-name_dogs {
+.c-popup .c-info .c-name_dogs {
     color: darkgray;
 }
 
-.popup.active{
+.c-popup.active{
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
 }
@@ -134,11 +142,11 @@ body{
     display: none;
 }
 
-.popup .c-extrainfo {
+.c-popup .c-extrainfo {
     display: block;
 }
 
-.popup .c-info {
+.c-popup .c-info {
     display: block;
     text-align: center;
 }
@@ -151,4 +159,36 @@ body{
     top: 16px;
     right: 16px;
     z-index: 1;
+}
+
+.c-volledigebar{
+    background-color: gray !important;
+    height: 24px;
+    width: 100%;
+    display: none;
+}
+
+.c-green-bar{
+    background-color: green !important;
+    height: 24px;
+    display: none;
+}
+
+.c-eerstedeel-bar{
+    background-color: gray !important;
+    height: 24px;
+    display: none;
+    z-index: 1;
+}
+
+.c-popup .c-info .c-volledigebar{
+    display: flex;
+}
+
+.c-popup .c-info .c-volledigebar .c-green-bar{
+    display: block;
+}
+
+.c-popup .c-info .c-volledigebar .c-eerstedeel-bar{
+    display: block;
 }
