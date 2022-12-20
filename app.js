@@ -3,6 +3,13 @@ const listentodog  = function () {
     let kruisje = document.querySelectorAll('.c-kruisje');
   dog.forEach((item, i) => {
     if(!(document.querySelector('.c-popup'))) {
+      item.addEventListener("keypress", function(event) {
+        // If the user presses the "Enter" key on the keyboard
+        if (event.key === "Enter") {
+          // Trigger the button element with a click
+          item.click();
+        }
+      });
     item.addEventListener('click', () => {
         console.log("clicked");
         item.classList.add('c-popup');
@@ -71,9 +78,9 @@ const getData = (endpoint) => {
       const mingewicht = result[0];
       
       doghtml += `
-      <div class="c-rectangle c-gallery-image js-image" tabindex=0>
+      <div class="c-rectangle c-gallery-image js-image" >
         <div class="c-info" weight="${dog.weight.metric}">
-          <img  src="${dog.image.url}" alt="" class="c-image">
+          <img  src="${dog.image.url}" alt="" class="c-image" tabindex=0>
           <p class="c-name_dogs">${dog.name}</p>
           <p class="c-extrainfo">${dog.weight.metric}</p>
           <div class="c-volledigebar">

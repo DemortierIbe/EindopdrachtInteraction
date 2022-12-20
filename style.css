@@ -11,8 +11,6 @@
 body{
     width: 100%;
     height: 100vh;
-    justify-content: center;
-    align-items: center;
     background: #E4F2E9;
     font-family: 'roboto', sans-serif;
 }
@@ -66,6 +64,11 @@ body{
      
 }
 
+.c-info{
+    display: block;
+    text-align: center;
+}
+
 
 .c-gallery-image{
     margin: 10px;
@@ -75,22 +78,23 @@ body{
 .c-rectangle {
     margin-bottom: -32px;
     height: 300px;
-    max-width: 240px;
+    max-width: 244px;
     margin-left: auto;
     margin-right: auto;
+    padding: 4px;
 }
 
 .c-image{
     width: 100%;
     height: 240px;
     object-fit: cover;
-    margin-left: auto;
-    margin-right: auto;
     border-radius: 0.5em;
 }
 
 .c-popup .c-image{
     transition: 1s;
+    min-width: 80%;
+    min-height: 80%;
 }
 
 /* popup */
@@ -118,8 +122,9 @@ body{
 .c-popup .c-info .c-image {
     height: 100%;
     width: 100%;
-    max-height: 400px;
-    max-width: 800px;
+    max-height: 600px;
+    max-width: 1000px;
+    box-shadow: none;
 }
 
 .c-popup .c-info .c-name_dogs {
@@ -166,6 +171,7 @@ body{
     height: 24px;
     width: 100%;
     display: none;
+    border-radius: 0.5em;
 }
 
 .c-green-bar{
@@ -179,6 +185,7 @@ body{
     height: 24px;
     display: none;
     z-index: 1;
+    border-radius: 0.5em 0 0 0.5em;
 }
 
 .c-popup .c-info .c-volledigebar{
@@ -191,4 +198,17 @@ body{
 
 .c-popup .c-info .c-volledigebar .c-eerstedeel-bar{
     display: block;
+}
+
+.c-image:focus{
+  box-shadow: 0 0 3px 3px black;
+}
+
+.c-image:hover{
+    box-shadow: 0 0 3px 3px black;
+  }
+
+.c-logo{
+    height: 4rem;
+    width: 4rem;
 }
