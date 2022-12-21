@@ -12,6 +12,9 @@ const listentodog  = function () {
       });
     item.addEventListener('click', () => {
         console.log("clicked");
+        dog.forEach((item, i) => {
+          item.classList.remove('c-popup');
+        });
         item.classList.add('c-popup');
         
         console.log("zet kruisje");
@@ -41,6 +44,13 @@ const listentokruisje = function () {
   let kruisje = document.querySelectorAll('.c-kruisje');
   let popup = document.querySelector('.c-popup');
   kruisje.forEach((item, i) => {
+    item.addEventListener("keypress", function(event) {
+      // If the user presses the "Enter" key on the keyboard
+      if (event.key === "Enter") {
+        // Trigger the button element with a click
+        item.click();
+      }
+    });
     item.addEventListener('click', () => {
         console.log("clicked kruisje");
         console.log(item);
@@ -92,7 +102,7 @@ const getData = (endpoint) => {
           <p class="c-extrainfo">${dog.life_span}</p>
           <div class="c-gewicht">
             <p class="c-minimumgewicht">0</p>
-            <p class="c-extrainfo c-weight">${dog.weight.metric} kg</p>
+            <p class="c-extrainfo c-weight">${dog.weight.metric}kg</p>
             <p class="c-maximumgewicht">100</p>
           </div>
           <div class="c-volledigebar">
@@ -106,7 +116,7 @@ const getData = (endpoint) => {
           <p class="c-extrainfo">Country of origin: ${dog.origin}</p>
           
         </div>
-        <div class="c-kruisje"></div>
+        <div class="c-kruisje" tabindex=0></div>
       </div>`;
     }
     document.querySelector('.js-dogs').innerHTML = doghtml;
