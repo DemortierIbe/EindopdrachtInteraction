@@ -23,6 +23,26 @@ h1{
     --Dark-color : #1f272a;
     --Gray-color : #969696;
     --Light-color : #F6F6F6;
+    --Border-radius: 0.5rem;
+
+    --global-baseline: 8px;
+    --global-whitespace: calc(var(--global-baseline) * 3);
+    /* = 24px */
+
+    --global-whitespace-xs: calc(var(--global-baseline) / 2);
+    /* = 4px */
+    --global-whitespace-sm: calc(var(--global-baseline) * 1);
+    /*  = 8px */
+    --global-whitespace-md: calc(var(--global-baseline) * 2);
+    /*  = 16px */
+    --global-whitespace-lg: calc(var(--global-baseline) * 4);
+    /*  = 32px */
+    --global-whitespace-xl: calc(var(--global-whitespace) * 2);
+    /*  = 48px */
+    --global-whitespace-xxl: calc(var(--global-whitespace) * 3);
+    /*  = 72px */
+    --global-whitespace-xxxl: calc(var(--global-baseline) * 10);
+    /* = 80px */
 }
 
 .c-title{
@@ -38,7 +58,7 @@ h1{
     max-height: 800px;
     display: grid;
     grid-template-columns: 1fr;
-    grid-gap: 32px;
+    grid-gap: 80px; /* 6rem*/
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -78,7 +98,8 @@ h1{
     display: block;
     text-align: center;
     background-color: white;
-    border-radius: 0.5em;
+    border-radius: var(--Border-radius);
+    box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -101,7 +122,7 @@ h1{
     height: 240px;
     width: 236px;
     object-fit: cover;
-    border-radius: 0.5em 0.5em 0 0;
+    border-radius: 0.5rem 0.5rem 0 0;
 }
 
 .c-popup .c-image{
@@ -121,7 +142,7 @@ h1{
     max-width: 1600px;
     height: 90vh;
     max-height: 800px;
-    border-radius: 20px;
+    border-radius: var(--Border-radius);
     background: rgba(0, 0, 0, 0.75);
     display: flex;
     justify-content: center;
@@ -129,7 +150,7 @@ h1{
     z-index: 5;
     overflow: hidden;
     transition: 1s;
-    opacity: 1;
+    /* opacity: 1; */
 }
 
 .c-popup .c-info .c-image {
@@ -138,16 +159,17 @@ h1{
     max-height: 600px;
     max-width: 1000px;
     box-shadow: none;
+    border-radius: var(--Border-radius);
 }
 
 .c-popup .c-info .c-name_dogs {
-    color: var(--Gray-color);
+    color: var(--Light-color);
 }
 
-.c-popup.active{
+/* .c-popup.active{
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
-}
+} */
 
 .c-name_dogs {
     color: var(--Dark-color);
@@ -159,19 +181,19 @@ h1{
 }
 
 .c-extrainfo {
-    color: var(--Gray-color);
+    color: var(--Light-color);
     display: none;
+    text-align: center;
+    margin-top: 6px;
 }
+
+
 
 .c-popup .c-extrainfo {
     display: block;
 }
 
-.c-popup .c-info {
-    display: block;
-    text-align: center;
-    background-color: transparent;
-}
+
 
 .c-kruisje {
     width: 20px;
@@ -188,11 +210,11 @@ h1{
     height: 24px;
     width: 100%;
     display: none;
-    border-radius: 0.5em;
+    border-radius: var(--Border-radius);
     border: 2px var(--Dark-color) solid;
 }
 
-.c-green-bar{
+.c-percentage-bar{
     background-color: var(--Dark-color) !important;
     height: 22px;
     display: none;
@@ -204,7 +226,7 @@ h1{
     height: 22px;
     display: none;
     z-index: 1;
-    border-radius: 0.5em 0 0 0.5em;
+    border-radius: 0.5rem 0 0 0.5rem;
     border-bottom: 2px var(--Dark-color) solid;
 }
 
@@ -212,7 +234,7 @@ h1{
     display: flex;
 }
 
-.c-popup .c-info .c-volledigebar .c-green-bar{
+.c-popup .c-info .c-volledigebar .c-percentage-bar{
     display: block;
 }
 
@@ -220,7 +242,11 @@ h1{
     display: block;
 }
 
-.c-image:focus{
+.c-popup .c-info .c-gewicht{
+    display: flex;
+}
+
+.c-info:focus{
   box-shadow: 0 0 3px 3px var(--Dark-color);
 }
 
@@ -228,8 +254,35 @@ h1{
     box-shadow: 0 0 3px 3px var(--Dark-color);
   }
 
+  .c-popup .c-info {
+    display: block;
+    text-align: center;
+    background-color: transparent;
+    box-shadow: none;
+}
+
 .c-logo{
     height: 4rem;
     width: 4rem;
     fill: var(--Dark-color);
+}
+
+.c-gewicht{
+    display: none;
+    min-width: 100%;
+    justify-content: space-between;
+}
+
+.c-minimumgewicht{
+    color: var(--Light-color);
+    margin-top: 6px;
+}
+
+.c-maximumgewicht{
+    color: var(--Light-color);
+    margin-top: 6px;
+}
+
+.c-weight{
+    margin-bottom: 6px;
 }

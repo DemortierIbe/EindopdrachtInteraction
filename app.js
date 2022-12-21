@@ -86,19 +86,25 @@ const getData = (endpoint) => {
       
       doghtml += `
       <div class="c-rectangle c-gallery-image js-image" >
-        <div class="c-info" weight="${dog.weight.metric}">
-          <img  src="${dog.image.url}" alt="" class="c-image" tabindex=0>
+        <div class="c-info" weight="${dog.weight.metric}" tabindex=0>
+          <img  src="${dog.image.url}" alt="" class="c-image" >
           <p class="c-name_dogs">${dog.name}</p>
-          <p class="c-extrainfo">${dog.weight.metric}</p>
+          <p class="c-extrainfo">${dog.life_span}</p>
+          <div class="c-gewicht">
+            <p class="c-minimumgewicht">0</p>
+            <p class="c-extrainfo c-weight">${dog.weight.metric} kg</p>
+            <p class="c-maximumgewicht">100</p>
+          </div>
           <div class="c-volledigebar">
           <div class="c-eerstedeel-bar" style="width:${mingewicht}%;">
             </div>
-            <div class="c-green-bar" style="width:${maxgewicht}%;">
+            <div class="c-percentage-bar" style="width:${maxgewicht}%;">
             </div>
           </div>
-          <p class="c-extrainfo">${dog.temperament}</p>
-          <p class="c-extrainfo">${dog.origin}</p>
-          <p class="c-extrainfo">${dog.life_span}</p>
+          
+          <p class="c-extrainfo">Dogs temperament: ${dog.temperament}</p>
+          <p class="c-extrainfo">Country of origin: ${dog.origin}</p>
+          
         </div>
         <div class="c-kruisje"></div>
       </div>`;
