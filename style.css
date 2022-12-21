@@ -172,8 +172,8 @@ h1{
     color: var(--Dark-color);
     margin-left: auto;
     margin-right: auto;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding-top: var(--global-baseline);
+    padding-bottom: var(--global-baseline);
     font-weight: bold;
 }
 
@@ -181,7 +181,7 @@ h1{
     color: var(--Light-color);
     display: none;
     text-align: center;
-    margin-top: 0.5rem;
+    margin-top: var(--global-baseline);
 }
 
 
@@ -273,14 +273,14 @@ h1{
 
 .c-minimumgewicht{
     color: var(--Light-color);
-    margin-top: 0.5rem;
+    margin-top: var(--global-baseline);
 }
 
 .c-maximumgewicht{
     color: var(--Light-color);
-    margin-top: 0.5rem;
+    margin-top: var(--global-baseline);
 }
 
 .c-weight{
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--global-baseline);
 }
