@@ -43,6 +43,7 @@ const listentokruisje = function () {
   console.log(document.querySelector('.c-popup').querySelector('.c-info').getAttribute('weight'));
   let kruisje = document.querySelectorAll('.c-kruisje');
   let popup = document.querySelector('.c-popup');
+  let body = document.querySelector('body');
   kruisje.forEach((item, i) => {
     item.addEventListener("keypress", function(event) {
       // If the user presses the "Enter" key on the keyboard
@@ -51,6 +52,12 @@ const listentokruisje = function () {
         item.click();
       }
     });
+    window.onclick = function(event) {
+      if (event.target == body) {
+        popup.classList.remove('c-popup');
+        item.innerHTML="";
+      }
+    };
     item.addEventListener('click', () => {
         console.log("clicked kruisje");
         console.log(item);
