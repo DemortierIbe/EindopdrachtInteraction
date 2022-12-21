@@ -40,7 +40,7 @@ const listentodog  = function () {
 }
 
 const listentokruisje = function () {
-  console.log(document.querySelector('.c-popup').querySelector('.c-info').getAttribute('weight'));
+  // console.log(document.querySelector('.c-popup').querySelector('.c-info').getAttribute('weight'));
   let kruisje = document.querySelectorAll('.c-kruisje');
   let popup = document.querySelector('.c-popup');
   let body = document.querySelector('body');
@@ -60,7 +60,6 @@ const listentokruisje = function () {
     };
     item.addEventListener('click', () => {
         console.log("clicked kruisje");
-        console.log(item);
         
         setTimeout(function(){ popup.classList.remove('c-popup'); item.innerHTML=""; console.log("kruisje leeg");}, 100);
         
@@ -83,14 +82,13 @@ const getData = (endpoint) => {
     const dogs = await getData(link);
     showFoto(dogs);
     
-    console.log(dogs);
+    // console.log(dogs);
   };
 
   let showFoto = function (dogs) {
     let doghtml = '';
     for (let dog of dogs) {
       const result = dog.weight.metric.split(' - ');
-      console.log(result[1]);
       let maxgewicht = 0;
       if(result[1] == undefined) {
         maxgewicht = 1;
