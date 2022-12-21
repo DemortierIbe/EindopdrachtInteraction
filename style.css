@@ -208,14 +208,15 @@ h1{
     width: 100%;
     display: none;
     border-radius: var(--Border-radius);
-    border: var(--global-whitespace-xxs) var(--Dark-color) solid;
+    /* border: var(--global-whitespace-xxs) var(--Dark-color) solid; */
 }
 
 .c-percentage-bar{
     background-color: var(--Dark-color) !important;
-    height: var(--global-height-bar);
+    height: var(--global-whitespace);
+    /* height: var(--global-height-bar); */
     display: none;
-    border-bottom: var(--global-whitespace-xxs) var(--Dark-color) solid;
+    /* border-bottom: var(--global-whitespace-xxs) var(--Dark-color) solid; */
 }
 
 .c-eerstedeel-bar{
@@ -224,7 +225,7 @@ h1{
     display: none;
     z-index: 1;
     border-radius: 0.5rem 0 0 0.5rem;
-    border-bottom: var(--global-whitespace-xxs) var(--Dark-color) solid;
+    /* border-bottom: var(--global-whitespace-xxs) var(--Dark-color) solid; */
 }
 
 .c-popup .c-info .c-volledigebar{

@@ -99,6 +99,9 @@ const getData = (endpoint) => {
          maxgewicht = result[1] - result[0];
       }
       const mingewicht = result[0];
+      if(dog.origin == undefined || dog.origin == "") {
+        dog.origin = "Unknown";
+      }
       
       
       doghtml += `
@@ -106,11 +109,11 @@ const getData = (endpoint) => {
         <div class="c-info" weight="${dog.weight.metric}" tabindex=0>
           <img  src="${dog.image.url}" alt="" class="c-image" >
           <p class="c-name_dogs">${dog.name}</p>
-          <p class="c-extrainfo">${dog.life_span}</p>
+          <p class="c-extrainfo">Average age: ${dog.life_span}</p>
           <div class="c-gewicht">
             <p class="c-minimumgewicht">0</p>
             <p class="c-extrainfo c-weight">${dog.weight.metric}kg</p>
-            <p class="c-maximumgewicht">100</p>
+            <p class="c-maximumgewicht">100 kg</p>
           </div>
           <div class="c-volledigebar">
           <div class="c-eerstedeel-bar" style="width:${mingewicht}%;">
